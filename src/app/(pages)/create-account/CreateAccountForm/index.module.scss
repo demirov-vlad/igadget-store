@@ -5,16 +5,14 @@
   display: flex;
   flex-direction: column;
   gap: calc(var(--base) / 2);
-  align-items: flex-start;
-  width: 66.66%;
+  margin-top: 20px;
 
-  @include mid-break {
-    width: 100%;
-  }
+  align-items: flex-start;
+  width: 100%;
 }
 
 .submit {
-  margin-top: calc(var(--base) / 2);
+  width: 100%;
 }
 
 .message {
