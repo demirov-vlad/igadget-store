@@ -57,7 +57,7 @@ export const CollectionArchive: React.FC<Props> = props => {
       : populateBy === 'selection'
       ? selectedDocs
       : []
-    )?.map(doc => doc.value),
+    )?.map(doc => doc.value) as Product[],
     hasNextPage: false,
     hasPrevPage: false,
     nextPage: 1,
@@ -179,8 +179,8 @@ export const CollectionArchive: React.FC<Props> = props => {
         )}
 
         <div className={classes.grid}>
-          {results.docs?.map((result, index) => {
-            return <Card doc={result} relationTo={relationTo} showCategories />
+          {results.docs?.map(result => {
+            return <Card key={result.id} doc={result} relationTo={relationTo} showCategories />
           })}
         </div>
         {results.totalPages > 1 && populateBy !== 'selection' && (
